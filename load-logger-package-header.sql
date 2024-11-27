@@ -6,7 +6,7 @@ create or replace package load_logger is
    Purpose:
       PLSQL library for writing log messages into LOAD_LOG table. The log messages are
       written as autonomous transactions, out of scope of the calling transaction. The
-      purpose is to persist log messages even when the calling transactions is rolled
+      purpose is to persist log messages even when the calling transaction is rolled
       back. Log records consist of common attributes and arbitrary log message in JSON
       format.
 
