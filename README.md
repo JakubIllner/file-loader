@@ -60,10 +60,10 @@ format.
 
 ## JSON_LOAD
 
-`JSON_LOAD` is a PLSQL library (package) for reading JSON documents from object store to
-target JSON Collection Table. The package expects the source JSON files are stored in
-object store in JSON Lines format, with every JSON document on a single line. One file may
-contain one or more JSON documents, separated by newlines.
+`JSON_LOAD` is a PLSQL library (package) for reading JSON documents from object store and
+inserting them to target JSON Collection Table. The package expects the source JSON files
+are stored in object store in JSON Lines format, with every JSON document on a single
+line. One file may contain one or more JSON documents, separated by newlines.
 
 ### Procedures and Functions
 
