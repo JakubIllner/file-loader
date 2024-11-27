@@ -86,14 +86,16 @@ Text defined by parameter `p_source_date_var` in `p_source_file_uri_list` is sub
 by `p_source_date`, using the mask `p_source_date_mask`. If the text is not found, no
 substitution takes place.
 
-```
 Example of parameter values:
+```
 p_source_file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/<namespace>/b/invoice-data/o/date=${date}/invoice-*.json',
 p_source_date => to_date('2024-09-01','YYYY-MM-DD'),
 p_source_date_var => '${date}',
 p_source_date_mask => '${YYYYMMDD}'
+```
 
 For the above parameters, the following files will be loaded:
+```
 file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/<namespace>/b/invoice-data/o/date=20240901/invoice-*.json'
 ```
 
