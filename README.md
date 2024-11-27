@@ -99,7 +99,8 @@ file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/<namespace
 
 ### JSON document transformation:
 
-JSON documents from source files will be extended by runtime metadata as follows:
+JSON documents from source files will be extended by runtime metadata `document_date` and
+`inserted_timestamp` as follows:
 
 ```
 {
