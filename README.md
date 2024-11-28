@@ -106,11 +106,15 @@ JSON documents from source files will be extended by runtime metadata `document_
 
 ```
 {
-   "document_date": "value of p_source_date in YYYY-MM-DD format",
-   "inserted_timestamp": "insert timestamp in YYYY-MM-DD"T"HH24:MI:SS.FF3 format",
-   "document_body": { JSON document from source file }
+   "document_date": "2024-09-01",
+   "inserted_timestamp": "2024-10-18T13:05:41.571",
+   "document_body": { ... }
 }
 ```
+
+* `document_date` - value of parameter `p_source_date` in YYYY-MM-DD format.
+* `inserted_timestamp` - insert timestamp in YYYY-MM-DD"T"HH24:MI:SS.FF3 format.
+* `document_body` - JSON document from source file.
 
 ### Installation
 
