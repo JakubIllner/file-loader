@@ -91,7 +91,7 @@ Example of parameter values:
 p_source_file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/<namespace>/b/invoice-data/o/date=${date}/invoice-*.json',
 p_source_date => to_date('2024-09-01','YYYY-MM-DD'),
 p_source_date_var => '${date}',
-p_source_date_mask => '${YYYYMMDD}'
+p_source_date_mask => 'YYYYMMDD'
 ```
 
 For the above parameters, the following files will be loaded:
