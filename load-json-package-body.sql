@@ -211,7 +211,6 @@ begin
         '{
            "characterset" : "AL32UTF8",
            "ignoreblanklines" : "true",
-           "recorddelimiter" : "0x''01''",
            "rejectlimit" : "10000",
            "unpackarrays" : "true",
            "maxdocsize" : 64000000,
@@ -279,7 +278,7 @@ begin
          returning json
       ));
       v_sql_statement :=
-         'select count(*)
+         'select /*+ NO_PARALLEL */ count(*)
           from '||v_log_table_name||'
           where record like ''Data File:%''';
       execute immediate v_sql_statement into v_file_counter;
