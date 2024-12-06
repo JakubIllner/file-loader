@@ -269,31 +269,33 @@ begin
    end;
    /*
       Get number of loaded files from log table
+      (skipped as performance of querying log table is quite bad)
    */
-   begin
-      v_log_table_name := 'COPY$'||v_operation_id||'_LOG';
-      load_logger.debug(v_application,v_module,p_target_schema,p_target_collection,v_context,json_object(
-         'message' value 'reading log table',
-         'table' value v_log_table_name
-         returning json
-      ));
-      v_sql_statement :=
-         'select /*+ NO_PARALLEL */ count(*)
-          from '||v_log_table_name||'
-          where record like ''Data File:%''';
-      execute immediate v_sql_statement into v_file_counter;
-      v_filecount_timestamp := systimestamp;
-   exception
-      when others then
-         load_logger.error(v_application,v_module,p_target_schema,p_target_collection,v_context,json_object(
-            'message' value 'error reading log table',
-            'table' value v_log_table_name,
-            'error_code' value sqlcode,
-            'error_message' value sqlerrm
-            returning json
-         ));
-         raise;
-   end;
+   -- begin
+   --    v_log_table_name := 'COPY$'||v_operation_id||'_LOG';
+         v_file_counter := 0;
+   --    load_logger.debug(v_application,v_module,p_target_schema,p_target_collection,v_context,json_object(
+   --       'message' value 'reading log table',
+   --       'table' value v_log_table_name
+   --       returning json
+   --    ));
+   --    v_sql_statement :=
+   --       'select count(*)
+   --        from '||v_log_table_name||'
+   --        where record like ''Data File:%''';
+   --    execute immediate v_sql_statement into v_file_counter;
+         v_filecount_timestamp := systimestamp;
+   -- exception
+   --    when others then
+   --       load_logger.error(v_application,v_module,p_target_schema,p_target_collection,v_context,json_object(
+   --          'message' value 'error reading log table',
+   --          'table' value v_log_table_name,
+   --          'error_code' value sqlcode,
+   --          'error_message' value sqlerrm
+   --          returning json
+   --       ));
+   --       raise;
+   -- end;
    /*
       Insert into target collection
    */
